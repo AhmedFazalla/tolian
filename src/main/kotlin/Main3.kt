@@ -6,6 +6,11 @@ fun main() {
 
   println("$userInput asdf ${userInput.reverse()}")
 
+  print("Input int: ")
+  val userInputInt = readln().toInt()
+
+  println("$userInputInt asdf ${userInputInt.reverse()}")
+
   println(userInput)
   println(reverseString(userInput))
 
@@ -36,6 +41,8 @@ fun String.reverse(): String =
       append(this@reverse[i])
     }
   }
+
+fun Int.reverse(): Int = this.toString().reverse().toInt()
 
 // this will return nothing, because the `this` refers to the buildString
 fun String.reverse1(): String =
