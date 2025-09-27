@@ -9,49 +9,58 @@ fun main() {
   println(userInput)
   println(reverseString(userInput))
 
-  if(userInput == reverseString(userInput)){
+  if (userInput == reverseString(userInput)) {
     println("palindrome")
-  } else{
+  } else {
     println("not palindrome")
   }
   val address = Address(street = "Tejero", streetNo = 123)
-  val user = User(name = "Joebert", age = 2, address).also{
-    println("also ni siya")
-  }
+  val user =
+    User(name = "Joebert", age = 2, address).also {
+      println("also ni siya")
+    }
   user.toKick()
-
 }
 
-fun reverseString(str: String): String = buildString {
-  for (i in str.lastIndex downTo 0) {
-    append(str[i])
+fun reverseString(str: String): String =
+  buildString {
+    for (i in str.lastIndex downTo 0) {
+      append(str[i])
+    }
   }
-}
 
 // correct implementation of the `this`, which explicitly refers to the String class
-fun String.reverse(): String = buildString {
-  for (i in this@reverse.lastIndex downTo 0) {
-    append(this@reverse[i])
+fun String.reverse(): String =
+  buildString {
+    for (i in this@reverse.lastIndex downTo 0) {
+      append(this@reverse[i])
+    }
   }
-}
 
 // this will return nothing, because the `this` refers to the buildString
-fun String.reverse1(): String = buildString {
-  for (i in lastIndex downTo 0) {
-    append(this[i])
+fun String.reverse1(): String =
+  buildString {
+    for (i in lastIndex downTo 0) {
+      append(this[i])
+    }
   }
-}
 
-class Address(street: String, streetNo: Int)
-class User(val name: String, age: Int, address: Address) {
+class Address(
+  street: String,
+  streetNo: Int,
+)
+
+class User(
+  val name: String,
+  age: Int,
+  address: Address,
+) {
   init {
     println("halaaaa")
-    require(age < 10) { "houyy bata ${age}" }
+    require(age < 10) { "houyy bata $age" }
   }
-  
 }
 
 fun User.toKick() {
   println("Hello user $name")
 }
-

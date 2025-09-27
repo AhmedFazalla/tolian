@@ -10,10 +10,10 @@ fun main() {
 //    println("Naloko na ka${e.message}")
 //  }
 
-    print("Input number: ")
-    val userInput = readln().toIntOrNull()?.rem(2)?.equals(0)
-    userInput.let { user -> println("hala ka $user") }
-    println("Inputted user number: ${userInput}")
+  print("Input number: ")
+  val userInput = readln().toIntOrNull()?.rem(2)?.equals(0)
+  userInput.let { user -> println("hala ka $user") }
+  println("Inputted user number: $userInput")
 
   val names = listOf("Alice", "Bob", "Charlie")
   val nameArray = "Hello"
@@ -24,24 +24,29 @@ fun main() {
 
   println("Input another for this: ")
   val anotherUserInput = readln().toInt()
-  if(anotherUserInput != null) {
-    val output = if(anotherUserInput % 2 == 0) {
-      "Hello world"
-    } else "boanga"
+  if (anotherUserInput != null) {
+    val output =
+      if (anotherUserInput % 2 == 0) {
+        "Hello world"
+      } else {
+        "boanga"
+      }
     println(output)
 
-    val anotherOutput = when {
-      anotherUserInput % 2 == 0 -> "even ni siya"
-      else -> "nagapataka"
-    }
+    val anotherOutput =
+      when {
+        anotherUserInput % 2 == 0 -> "even ni siya"
+        else -> "nagapataka"
+      }
     println(anotherOutput)
 
-    val anotherOutput1 = when(anotherUserInput) {
-      3 -> "three ni siya"
-      5 -> "5 ni siya"
-      in 6..20 -> "sulod sa range"
-      else -> "nagapataka"
-    }
+    val anotherOutput1 =
+      when (anotherUserInput) {
+        3 -> "three ni siya"
+        5 -> "5 ni siya"
+        in 6..20 -> "sulod sa range"
+        else -> "nagapataka"
+      }
     println(anotherOutput1)
   }
 

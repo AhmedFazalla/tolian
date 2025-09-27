@@ -23,7 +23,7 @@ fun main() {
   val sum = ++x + 5
   println(sum)
 
-  println("Hello world  ${sum % 2 ==0}")
+  println("Hello world  ${sum % 2 == 0}")
 
   val num1 = 11
   val num2 = 12
@@ -36,5 +36,5 @@ fun main() {
   println("Input number: ")
   val userInput = readln()
 
-  println("Inputted number = ${userInput}")
+  println("Inputted number = $userInput")
 }
