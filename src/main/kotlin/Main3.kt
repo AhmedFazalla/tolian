@@ -30,7 +30,7 @@ fun reverseString(str: String): String = buildString {
 
 // correct implementation of the `this`, which explicitly refers to the String class
 fun String.reverse(): String = buildString {
-  for (i in lastIndex downTo 0) {
+  for (i in this@reverse.lastIndex downTo 0) {
     append(this@reverse[i])
   }
 }
