@@ -6,7 +6,31 @@ fun main() {
   print("Input string: ")
   val userInput = readln()
 
+  val lambda: (Char) -> Boolean = {
+    it.isLetter()
+  }
+  
+  println(userInput.filter(::isL))
   println(userInput.filtered { it.isLetter() })
+  println(userInput.myFilter { it.isLetter() })
+  println(userInput.filtered(lambda))
+  println(userInput.filtered(labda()))
+}
+
+fun String.myFilter(predicate: (Char) -> Boolean): String = buildString { 
+  for(i in this@myFilter) {
+    if(predicate(i)) {
+      append(i)
+    }
+  }
+}
+//same above
+fun String.myFilter1(predicate: Char.() -> Boolean): String = buildString {
+  for(i in this@myFilter1) {
+    if(predicate(i)) {
+      append(i)
+    }
+  }
 }
 
 fun String.filtered(predicate: (Char) -> Boolean): String {
@@ -27,4 +51,8 @@ fun <T> Iterable<T>.filtered(predicate: (T) -> Boolean): List<T> {
     }
   }
   return list
+}
+
+fun labda(): (Char) -> Boolean = {
+  it.isLetter()
 }
